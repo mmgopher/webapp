@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+{{template "header"}}
+<h1>User List</h1>
+<h3><a href="/users/create">Create new user</a></h3>
+<table>
+    <thead>
+    <tr>
+        <th>Login</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Age</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .}}
+    <tr>
+        <td>{{.Login}}</td>
+        <td>{{.First}}</td>
+        <td>{{.Last}}</td>
+        <td>{{.Age}}</td>
+        <td>
+            <a href="/users/update/{{.Id.Hex}}">update</a>
+            <a href="/users/delete/{{.Id.Hex}}">delete</a>
+        </td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>
+
+{{template "footer"}}
+</body>
+</html>

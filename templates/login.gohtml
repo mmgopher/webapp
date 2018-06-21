@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+{{template "header"}}
+<h1>LOGIN</h1>
+{{if .}}
+<p>{{.}}</p>
+{{end}}
+<form method="post" action="/login">
+    <input type="text" name="login" placeholder="login">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit">
+</form>
+<h2><a href="/users/create">signup</a></h2>
+{{template "footer"}}
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+{{template "header"}}
+<h1>Update User</h1>
+<form method="post" action="/users/update">
+    <table>
+        <tr>
+            <th>Login</th>
+
+            <td> <input type="hidden" name="id" placeholder="id" required autofocus value="{{.Id.Hex}}">
+                <input type="text" name="login" placeholder="login" required autofocus value="{{.Login}}"></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td>  <input type="text" name="password" placeholder="password" ></td>
+        </tr>
+        <tr>
+            <th>First name</th>
+            <td> <input type="text" name="first" placeholder="first" required value="{{.First}}"></td>
+        </tr>
+        <tr>
+            <th>Last name</th>
+            <td>  <input type="text" name="last" placeholder="last" required value="{{.Last}}"></td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>  <input type="text" name="age" placeholder="age" required value="{{.Age}}"></td>
+        </tr>
+    </table>
+    <input type="submit">
+</form>
+{{template "footer"}}
+</body>
+</html>
